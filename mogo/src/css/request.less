@@ -1,0 +1,126 @@
+// Variables
+@white-color: #fff;
+@border-radius: 8px;
+@box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@margin: 30px;
+@padding: 12px 15px;
+@text-color: #5e5e5e;
+@background-color-even: #f8f9fa;
+@background-color-hover: #e9ecef;
+@transition: background-color 0.3s ease;
+@gradient-bg: linear-gradient(to right, #d79494, #eddfb5);
+@text-transform: uppercase;
+@font-size: 0.85rem;
+@letter-spacing: 0.5px;
+@media-max-width: 808px;
+@border-color: #ccc;
+@padding-left: 50%;
+@position-absolute: absolute;
+@left-pos: 6px;
+@width: 45%;
+@padding-right: 10px;
+@font-weight-bold: bold;
+
+.table-root {
+   width: 100%;
+}
+
+.table-container {
+   background-color: @white-color;
+   border-radius: @border-radius;
+   box-shadow: @box-shadow;
+   overflow: hidden;
+   margin: @margin;
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+th,
+td {
+   padding: @padding;
+   text-align: left;
+}
+
+td {
+   color: @text-color;
+}
+
+thead {
+   background: @gradient-bg;
+   color: #000;
+}
+
+th {
+   font-weight: 600;
+   text-transform: @text-transform;
+   font-size: @font-size;
+   letter-spacing: @letter-spacing;
+}
+
+tbody tr:nth-child(even) {
+   background-color: @background-color-even;
+}
+
+tbody tr:hover {
+   background-color: @background-color-hover;
+   transition: @transition;
+}
+
+.no-requests-holder {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@media screen and (max-width: @media-max-width) {
+   .table-container {
+      box-shadow: none;
+   }
+
+   table,
+   thead,
+   tbody,
+   th,
+   td {
+      display: block;
+   }
+
+   tr {
+      display: block;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      border-radius: 13px;
+      padding: 14px;
+   }
+
+   thead tr {
+      position: @position-absolute;
+      top: -9999px;
+      left: -9999px;
+   }
+
+   tr {
+      border: 1px solid @border-color;
+      margin-bottom: 10px;
+   }
+
+   td {
+      border: none;
+      position: relative;
+      padding-left: @padding-left;
+   }
+
+   td:before {
+      content: attr(data-label);
+      position: @position-absolute;
+      left: @left-pos;
+      width: @width;
+      padding-right: @padding-right;
+      white-space: nowrap;
+      font-weight: @font-weight-bold;
+   }
+}
